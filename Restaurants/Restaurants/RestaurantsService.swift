@@ -13,7 +13,11 @@ class RestaurantsService: RestaurantsServiceProtocol {
     // Call protocol function
     
     func provider<T>() -> MoyaProvider<T> where T : TargetType {
-        let provider = MoyaProvider<T>(plugins: [NetworkLoggerPlugin(verbose: true)])
+        let provider = MoyaProvider<T>(plugins:
+            [
+//                NetworkLoggerPlugin(verbose: true)
+            ]
+        )
         
         return provider
     }
