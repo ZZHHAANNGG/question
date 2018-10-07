@@ -7,20 +7,62 @@
 //
 
 import UIKit
+import NSObject_Rx
+import RxOptional
+import RxSwift
+import RxCocoa
 
 class RestaurantsView: UIViewController {
 
     // OUTLETS HERE
 
     // VARIABLES HERE
-    fileprivate var viewModel:RestaurantsViewModel!
+    lazy var tableView:UITableView = {
+        let tv = UITableView(frame: CGRect.zero, style: UITableView.Style.plain)
+        tv.register(RestaurantCell.self, forCellReuseIdentifier: RestaurantCell.ReuseIdentifier)
+        tv.translatesAutoresizingMaskIntoConstraints = false
+        tv.estimatedRowHeight = 50
+        tv.rowHeight = UITableView.automaticDimension
+        tv.tableFooterView = UIView(frame: CGRect.zero)
+        return tv
+    }()
     
-
+    lazy var viewModel:RestaurantsViewModel = {
+        let vm = RestaurantsViewModel()
+        // init
+        return vm
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        title = "Explore"
+        navigationItem.title = "DoorDash"
+        
+        bindUI()
+
+        view.addSubview(tableView)
+        
+        createConstraints()
     }
     
+    fileprivate func createConstraints(){
+        NSLayoutConstraint.activate([
+            tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            ])
+    }
+}
+
+extension RestaurantsView{
+    
+    fileprivate func bindUI(){
+        viewModel.restaurants.bind(to: self.tableView.rx.items(cellIdentifier: RestaurantCell.ReuseIdentifier, cellType: RestaurantCell.self)){ _, element, cell in
+            cell.driveUI(model: element)
+            }.disposed(by: self.rx.disposeBag)
+    }
 }
 
 

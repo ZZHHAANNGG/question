@@ -11,7 +11,7 @@ import RxSwift
 import RxSwiftExt
 import RxCocoa
 import Moya
-
+/*
 struct SelectAddressViewModel {
     
     private let provider:MoyaProvider<<#T#>> = SelectAddressService().provider()
@@ -24,3 +24,4 @@ struct SelectAddressViewModel {
 extension SelectAddressViewModel {
     
 }
+*/

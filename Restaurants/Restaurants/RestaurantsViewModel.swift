@@ -24,7 +24,7 @@ class RestaurantsViewModel : NSObject {
     var lngSubject:LocationSubject = LocationSubject(value: "-122.387450")
     
     //MARK: - Output
-    let restaurants: RestaurantsSubject = RestaurantsSubject(value: [Restaurant]())
+    let restaurants: RestaurantsSubject = RestaurantsSubject(value: Restaurants())
     // UI would only need to display errors with a center way
     // ViewModel will handle all the business logic
     let errors = PublishRelay<String>()
@@ -41,7 +41,9 @@ class RestaurantsViewModel : NSObject {
     fileprivate var stongHolderObservable:Observable<Void>!
     
     // for Dependency Injection
-    init(provider:MoyaProvider<RestaurantsTarget>?) {
+    init(_ provider:MoyaProvider<RestaurantsTarget>?=nil) {
+        super.init()
+        
         if let DIProvider = provider {
             self.provider = DIProvider
         }
@@ -67,7 +69,7 @@ class RestaurantsViewModel : NSObject {
                     
                     do{
                         let decoder = JSONDecoder()
-                        baseModel = try decoder.decode(Restaurants.self, from: response.data)
+                        baseModel = try decoder.decode([Restaurant].self, from: response.data)
                     }catch let error  {
                         // this should never happen
                         self.errors.accept(error.localizedDescription)

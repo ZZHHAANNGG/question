@@ -14,7 +14,6 @@ struct Restaurant: Codable {
     let isTimeSurging: Bool?
     let maxOrderSize: Int?
     let deliveryFee, maxCompositeScore, id: Int?
-    let merchantPromotions: [MerchantPromotion]?
     let averageRating: Double?
     let menus: [Menu]?
     let compositeScore: Int?
@@ -42,7 +41,6 @@ struct Restaurant: Codable {
         case deliveryFee = "delivery_fee"
         case maxCompositeScore = "max_composite_score"
         case id
-        case merchantPromotions = "merchant_promotions"
         case averageRating = "average_rating"
         case menus
         case compositeScore = "composite_score"

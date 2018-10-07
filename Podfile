@@ -12,7 +12,8 @@ target 'Restaurants' do
   pod 'NSObject+Rx'
   pod 'RxSwiftExt'
   pod 'RxOptional'
-
+  pod 'SDWebImage'
+  
   target 'RestaurantsTests' do
     inherit! :search_paths
     # Pods for testing

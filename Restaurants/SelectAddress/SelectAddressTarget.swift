@@ -9,11 +9,13 @@
 import Foundation
 import Moya
 
+/*
 public enum SelectAddressTarget {
-    
+ 
 }
 
 extension SelectAddressTarget : TargetType {
+ 
     public var baseURL: URL { return URL(string: <#baseURL#>)! }
     
     public var para : [String : Any]{
@@ -57,3 +59,4 @@ extension SelectAddressTarget : TargetType {
         return nil
     }
 }
+ */

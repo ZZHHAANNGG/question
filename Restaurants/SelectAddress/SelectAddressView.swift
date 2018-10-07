@@ -9,12 +9,12 @@
 import UIKit
 
 class SelectAddressView: UIViewController {
-
     // OUTLETS HERE
 
+/*
     // VARIABLES HERE
     fileprivate var viewModel:SelectAddressViewModel!
-    
+*/
 
     override func viewDidLoad() {
         super.viewDidLoad()
