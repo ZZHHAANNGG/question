@@ -33,11 +33,31 @@ class RestaurantsView: UIViewController {
         return vm
     }()
     
+    lazy var tabItem:UITabBarItem = {
+        let tabbarItem = UITabBarItem(title: "Explore", image: #imageLiteral(resourceName: "tab-explore"), selectedImage: #imageLiteral(resourceName: "tab-explore"))
+        return tabbarItem
+    }()
+    
+    lazy var leftBarItem:UIBarButtonItem = {
+        let barItem = UIBarButtonItem(image: #imageLiteral(resourceName: "nav-address"), style: UIBarButtonItem.Style.plain, target: nil, action: nil)
+        return barItem
+    }()
+    
+    fileprivate func setupNavigationBar() {
+        title = "Explore"
+        navigationItem.title = "DoorDash"
+        
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:theRedColor]
+        
+        tabBarItem = tabItem
+        
+        navigationItem.leftBarButtonItem = leftBarItem
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Explore"
-        navigationItem.title = "DoorDash"
+        setupNavigationBar()
         
         bindUI()
 
@@ -61,6 +81,21 @@ extension RestaurantsView{
     fileprivate func bindUI(){
         viewModel.restaurants.bind(to: self.tableView.rx.items(cellIdentifier: RestaurantCell.ReuseIdentifier, cellType: RestaurantCell.self)){ _, element, cell in
             cell.driveUI(model: element)
+            }.disposed(by: self.rx.disposeBag)
+        
+        #warning("Pass viewmodel to sub viewcontroller. Should use Dependence Injection ")
+        leftBarItem.rx.tap.subscribe { [weak self](_) in
+            
+            guard let `self` = self else{
+                return
+            }
+            
+            let selectAddressViewController = SelectAddressView(viewModel: self.viewModel)
+            
+            let navigationController = UINavigationController(rootViewController: selectAddressViewController)
+            
+            self.present(navigationController, animated: true, completion: nil)
+            
             }.disposed(by: self.rx.disposeBag)
     }
 }

@@ -30,6 +30,7 @@
 		105BB53C216A572A000B6350 /* store_search.json in Resources */ = {isa = PBXBuildFile; fileRef = 105BB53B216A572A000B6350 /* store_search.json */; };
 		105BB540216A68DF000B6350 /* RestaurantCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105BB53F216A68DF000B6350 /* RestaurantCellView.swift */; };
 		105BB542216A7FD4000B6350 /* rootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105BB541216A7FD4000B6350 /* rootViewController.swift */; };
+		105BB549216AA88F000B6350 /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105BB548216AA88F000B6350 /* ColorConstants.swift */; };
 		3B304F979A7B965D6860D845 /* Pods_RestaurantsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F15EEF87331926FBEC43AD3 /* Pods_RestaurantsTests.framework */; };
 		61EB53AFF5B4F69714C373A2 /* Pods_Restaurants.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCC9BA61F5C6805520230DD9 /* Pods_Restaurants.framework */; };
 		977C0B581332B33F707CC890 /* Pods_RestaurantsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B474DEEB3326B83B1B05E8CC /* Pods_RestaurantsUITests.framework */; };
@@ -82,6 +83,7 @@
 		105BB53B216A572A000B6350 /* store_search.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = store_search.json; sourceTree = "<group>"; };
 		105BB53F216A68DF000B6350 /* RestaurantCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCellView.swift; sourceTree = "<group>"; };
 		105BB541216A7FD4000B6350 /* rootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rootViewController.swift; sourceTree = "<group>"; };
+		105BB548216AA88F000B6350 /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
 		2F15EEF87331926FBEC43AD3 /* Pods_RestaurantsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RestaurantsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		730BB6BB9C9FED8CA2AC5F18 /* Pods-RestaurantsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestaurantsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RestaurantsTests/Pods-RestaurantsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		97ABCBFCF4791F0BF8FC6583 /* Pods-RestaurantsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestaurantsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RestaurantsUITests/Pods-RestaurantsUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 		105BB4EA216A44B2000B6350 /* Restaurants */ = {
 			isa = PBXGroup;
 			children = (
+				105BB547216AA877000B6350 /* Constants */,
 				105BB538216A53CC000B6350 /* Meta */,
 				105BB4EB216A44B2000B6350 /* AppDelegate.swift */,
 				105BB535216A4D3F000B6350 /* Target */,
@@ -220,6 +223,14 @@
 				105BB539216A53DD000B6350 /* SourceryMeta.swift */,
 			);
 			path = Meta;
+			sourceTree = "<group>";
+		};
+		105BB547216AA877000B6350 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				105BB548216AA88F000B6350 /* ColorConstants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		4D4ED7EB07A7E62620471314 /* Frameworks */ = {
@@ -503,6 +514,7 @@
 				105BB534216A4658000B6350 /* SelectAddressTarget.swift in Sources */,
 				105BB542216A7FD4000B6350 /* rootViewController.swift in Sources */,
 				105BB4EC216A44B2000B6350 /* AppDelegate.swift in Sources */,
+				105BB549216AA88F000B6350 /* ColorConstants.swift in Sources */,
 				105BB527216A4647000B6350 /* RestaurantsViewModel.swift in Sources */,
 				105BB526216A4647000B6350 /* RestaurantsService.swift in Sources */,
 			);

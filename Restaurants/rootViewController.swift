@@ -12,17 +12,17 @@ class RootViewControoler : UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tabBar.isTranslucent = false
+        
         setTabBarItems()
     }
     
     func setTabBarItems(){
         
         let exploreViewController = RestaurantsView()
-        let tabItem = UITabBarItem(title: "Explore", image: #imageLiteral(resourceName: "tab-explore"), selectedImage: #imageLiteral(resourceName: "tab-explore"))
-        exploreViewController.tabBarItem = tabItem
         
         let favoriateViewController = UIViewController()
-        favoriateViewController.tabBarItem = UITabBarItem(title: "Favorites", image: #imageLiteral(resourceName: "star-white"), selectedImage: #imageLiteral(resourceName: "tab-star"))
+        favoriateViewController.tabBarItem = UITabBarItem(title: "Favorites", image: #imageLiteral(resourceName: "tab-star"), selectedImage: #imageLiteral(resourceName: "tab-star"))
         
         favoriateViewController.navigationItem.title = "Favorites"
 

@@ -17,6 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        UITabBar.appearance().tintColor = theRedColor
+        UITabBar.appearance().unselectedItemTintColor = theGrapColor
+        
+        UIBarButtonItem.appearance().tintColor = theRedColor
+        
         let rootView = RootViewControoler()
         
         if let window = self.window{
