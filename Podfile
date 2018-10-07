@@ -11,8 +11,11 @@ target 'Restaurants' do
   pod 'Moya/RxSwift'
   pod 'NSObject+Rx'
   pod 'RxSwiftExt'
+  pod 'RxMKMapView'
   pod 'RxOptional'
+  pod 'RxGesture'
   pod 'SDWebImage'
+  
   
   target 'RestaurantsTests' do
     inherit! :search_paths
