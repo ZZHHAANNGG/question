@@ -36,17 +36,17 @@ class RestaurantCell : UITableViewCell {
     }()
     
     lazy var categoryLabel:UILabel = {
-        let label = getLabel(numberOfLines: 0, textColor:UIColor(red:0.58, green:0.58, blue:0.58, alpha:1.00))
+        let label = getLabel(numberOfLines: 0, textColor:theGrapColor)
         return label
     }()
     
     lazy var deliveryLabel:UILabel = {
-        let label = getLabel(textColor:UIColor(red:0.31, green:0.31, blue:0.31, alpha:1.00))
+        let label = getLabel(textColor:theDarkGrapColor)
         return label
     }()
     
     lazy var distanceLabel:UILabel = {
-        let label = getLabel(textColor:UIColor(red:0.31, green:0.31, blue:0.31, alpha:1.00))
+        let label = getLabel(textColor:theDarkGrapColor)
         return label
     }()
     

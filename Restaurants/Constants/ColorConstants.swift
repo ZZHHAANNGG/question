@@ -8,5 +8,6 @@
 
 import UIKit
 
-let theRedColor     = UIColor(red:0.93, green:0.26, blue:0.32, alpha:1.00)
-let theGrapColor    = UIColor(red:0.65, green:0.65, blue:0.65, alpha:1.00)
+let theRedColor      = UIColor(red:0.93, green:0.26, blue:0.32, alpha:1.00)
+let theGrapColor     = UIColor(red:0.65, green:0.65, blue:0.65, alpha:1.00)
+let theDarkGrapColor = UIColor(red:0.31, green:0.31, blue:0.31, alpha:1.00)
