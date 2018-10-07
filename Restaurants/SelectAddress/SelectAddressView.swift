@@ -1,5 +1,5 @@
-//
-//  SecondViewController.swift
+//  
+//  SelectAddressView.swift
 //  Restaurants
 //
 //  Created by Ted Zhang on 10/7/18.
@@ -8,13 +8,19 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class SelectAddressView: UIViewController {
+
+    // OUTLETS HERE
+
+    // VARIABLES HERE
+    fileprivate var viewModel:SelectAddressViewModel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-
+    
 }
+
 

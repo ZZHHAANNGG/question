@@ -1,5 +1,5 @@
-//
-//  FirstViewController.swift
+//  
+//  RestaurantsView.swift
 //  Restaurants
 //
 //  Created by Ted Zhang on 10/7/18.
@@ -8,13 +8,19 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class RestaurantsView: UIViewController {
+
+    // OUTLETS HERE
+
+    // VARIABLES HERE
+    fileprivate var viewModel:RestaurantsViewModel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-
+    
 }
+
 
