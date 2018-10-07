@@ -11,3 +11,7 @@ import Foundation
 protocol AutoTargetProtocol {
     
 }
+
+protocol AutoServiceProtocol {
+    
+}

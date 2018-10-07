@@ -9,7 +9,7 @@
 import Foundation
 import Moya
 
-protocol RestaurantsServiceProtocol {
-    // Add you own protocol function for a RestaurantsServiceProtocol.
+protocol RestaurantsServiceProtocol : AutoServiceProtocol{
+    // Is for Dependence Injection or Sourcery placeholder protocol
     func provider<T>() -> MoyaProvider<T> where T:TargetType
 }

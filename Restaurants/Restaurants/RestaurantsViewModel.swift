@@ -14,9 +14,18 @@ import Moya
 
 struct RestaurantsViewModel {
     
-    private let provider:MoyaProvider<<#T#>> = RestaurantsService().provider()
+    lazy var provider:MoyaProvider<RestaurantsTarget> = {
+        let provider:MoyaProvider<RestaurantsTarget> = RestaurantsService().provider()
+        
+        return provider
+    }()
     
-    init() {
+    // for Dependency Injection
+    init(provider:MoyaProvider<RestaurantsTarget>?) {
+        if let DIProvider = provider {
+            self.provider = DIProvider
+        }
+        
     }
     
 }
